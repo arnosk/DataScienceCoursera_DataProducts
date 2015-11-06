@@ -1,0 +1,82 @@
+---
+title       : Daimonds price predction
+subtitle    : Prediction of the price of diamonds per carat
+author      : Arno Kemner
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+#Summary
+
+This is a model for the prediction of the price of diamonds per carat.
+A simple linear regression is used to make the model
+
+The data is an internal example from R. And comes from the dataset 'diamonds'
+An explanation of the dataset is given in this [link](https://vincentarelbundock.github.io/Rdatasets/doc/Ecdat/Diamond.html)
+
+The price is in singapore dollars, in US$ that is multiplied by 0.70374 (on the 6th of november 2015)
+
+--- .class #id 
+
+
+##Analysis of the data
+
+Here is the summary of the diamonds data. It is much more then what is done in this project. For this project we only need the price and the carat of the diamonds. No further analysis is done.
+
+```{r}
+library(ggplot2)
+summary(diamonds)
+```
+
+--- .class #id 
+
+
+##Model fitting
+
+A model is fit with linear regression:
+
+```{r}
+fit <- lm(price ~ carat, data = diamonds)
+```
+
+--- .class #id 
+
+
+##Results
+
+The coefficients of the linear model are:
+
+```{r}
+fit$coefficients
+```
+
+So a simple model for the prediction of the price is:
+  
+Price = 0.70374 * (`r coef(fit)[2]` * carat + `r coef(fit)[1]`)
+  
+Note that this is multiplied by a factor for the conversion to US$
+
+Finally a plot of the data with the regression line:
+```{r}
+ggplot(diamonds, aes(carat,price)) + 
+    geom_point(alpha=0.1) + 
+    geom_smooth(method="lm") 
+
+```
+
+--- .class #id 
+
+
+# Finally
+
+There is also a shiny app of this simple model.
+It can be found [here](https://arnosk.shinyapps.io/diamonds)
+
+
+
+
