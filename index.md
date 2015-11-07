@@ -11,7 +11,7 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-#Summary
+## Summary
 
 This is a model for the prediction of the price of diamonds per carat.
 A simple linear regression is used to make the model
@@ -24,7 +24,7 @@ The price is in singapore dollars, in US$ that is multiplied by 0.70374 (on the 
 --- .class #id 
 
 
-##Analysis of the data
+## Analysis of the data
 
 Here is the summary of the diamonds data. It is much more then what is done in this project. For this project we only need the price and the carat of the diamonds. No further analysis is done.
 
@@ -61,10 +61,9 @@ summary(diamonds)
 ## 
 ```
 
---- .class #id 
+--- 
 
-
-##Model fitting
+## Model fitting
 
 A model is fit with linear regression:
 
@@ -72,11 +71,6 @@ A model is fit with linear regression:
 ```r
 fit <- lm(price ~ carat, data = diamonds)
 ```
-
---- .class #id 
-
-
-##Results
 
 The coefficients of the linear model are:
 
@@ -90,6 +84,10 @@ fit$coefficients
 ##   -2256.361    7756.426
 ```
 
+---
+
+## Results
+
 So a simple model for the prediction of the price is:
   
 Price = 0.70374 * (7756.425618 * carat + -2256.36058)
@@ -99,17 +97,14 @@ Note that this is multiplied by a factor for the conversion to US$
 Finally a plot of the data with the regression line:
 
 ```r
-ggplot(diamonds, aes(carat,price)) + 
-    geom_point(alpha=0.1) + 
-    geom_smooth(method="lm") 
+ggplot(diamonds, aes(carat,price)) + geom_point(alpha=0.1) + geom_smooth(method="lm") 
 ```
 
 ![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png) 
 
---- .class #id 
+---
 
-
-# Finally
+## Finally
 
 There is also a shiny app of this simple model.
 It can be found [here](https://arnosk.shinyapps.io/diamonds)

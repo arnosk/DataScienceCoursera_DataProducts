@@ -42,10 +42,11 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
   <article data-timings="">
-    <p>#Summary</p>
-
-<p>This is a model for the prediction of the price of diamonds per carat.
+    <p>This is a model for the prediction of the price of diamonds per carat.
 A simple linear regression is used to make the model</p>
 
 <p>The data is an internal example from R. And comes from the dataset &#39;diamonds&#39;
@@ -58,10 +59,11 @@ An explanation of the dataset is given in this <a href="https://vincentarelbundo
 </slide>
 
 <slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Analysis of the data</h2>
+  </hgroup>
   <article data-timings="">
-    <p>##Analysis of the data</p>
-
-<p>Here is the summary of the diamonds data. It is much more then what is done in this project. For this project we only need the price and the carat of the diamonds. No further analysis is done.</p>
+    <p>Here is the summary of the diamonds data. It is much more then what is done in this project. For this project we only need the price and the carat of the diamonds. No further analysis is done.</p>
 
 <pre><code class="r">library(ggplot2)
 summary(diamonds)
@@ -97,22 +99,15 @@ summary(diamonds)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Model fitting</h2>
+  </hgroup>
   <article data-timings="">
-    <p>##Model fitting</p>
-
-<p>A model is fit with linear regression:</p>
+    <p>A model is fit with linear regression:</p>
 
 <pre><code class="r">fit &lt;- lm(price ~ carat, data = diamonds)
 </code></pre>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="class" id="id" style="background:;">
-  <article data-timings="">
-    <p>##Results</p>
 
 <p>The coefficients of the linear model are:</p>
 
@@ -123,7 +118,16 @@ summary(diamonds)
 ##   -2256.361    7756.426
 </code></pre>
 
-<p>So a simple model for the prediction of the price is:</p>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Results</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>So a simple model for the prediction of the price is:</p>
 
 <p>Price = 0.70374 * (7756.425618 * carat + -2256.36058)</p>
 
@@ -131,9 +135,7 @@ summary(diamonds)
 
 <p>Finally a plot of the data with the regression line:</p>
 
-<pre><code class="r">ggplot(diamonds, aes(carat,price)) + 
-    geom_point(alpha=0.1) + 
-    geom_smooth(method=&quot;lm&quot;) 
+<pre><code class="r">ggplot(diamonds, aes(carat,price)) + geom_point(alpha=0.1) + geom_smooth(method=&quot;lm&quot;) 
 </code></pre>
 
 <p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"> </p>
@@ -142,9 +144,9 @@ summary(diamonds)
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-5" style="background:;">
   <hgroup>
-    <h1>Finally</h1>
+    <h2>Finally</h2>
   </hgroup>
   <article data-timings="">
     <p>There is also a shiny app of this simple model.
@@ -160,25 +162,25 @@ It can be found <a href="https://arnosk.shinyapps.io/diamonds">here</a></p>
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='NA'>
+        data-slide=1 title='Summary'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='NA'>
+        data-slide=2 title='Analysis of the data'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='NA'>
+        data-slide=3 title='Model fitting'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='NA'>
+        data-slide=4 title='Results'>
          4
       </a>
     </li>
