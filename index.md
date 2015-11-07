@@ -88,12 +88,8 @@ fit$coefficients
 
 ## Results
 
-So a simple model for the prediction of the price is:
-  
+So a simple model for the prediction of the price is: 
 Price = 0.70374 * (7756.425618 * carat + -2256.36058)
-  
-Note that this is multiplied by a factor for the conversion to US$
-
 Finally a plot of the data with the regression line:
 
 ```r

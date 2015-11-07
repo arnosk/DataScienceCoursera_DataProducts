@@ -127,13 +127,9 @@ summary(diamonds)
     <h2>Results</h2>
   </hgroup>
   <article data-timings="">
-    <p>So a simple model for the prediction of the price is:</p>
-
-<p>Price = 0.70374 * (7756.425618 * carat + -2256.36058)</p>
-
-<p>Note that this is multiplied by a factor for the conversion to US$</p>
-
-<p>Finally a plot of the data with the regression line:</p>
+    <p>So a simple model for the prediction of the price is: 
+Price = 0.70374 * (7756.425618 * carat + -2256.36058)
+Finally a plot of the data with the regression line:</p>
 
 <pre><code class="r">ggplot(diamonds, aes(carat,price)) + geom_point(alpha=0.1) + geom_smooth(method=&quot;lm&quot;) 
 </code></pre>

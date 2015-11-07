@@ -53,12 +53,8 @@ fit$coefficients
 
 ## Results
 
-So a simple model for the prediction of the price is:
-  
+So a simple model for the prediction of the price is: 
 Price = 0.70374 * (`r coef(fit)[2]` * carat + `r coef(fit)[1]`)
-  
-Note that this is multiplied by a factor for the conversion to US$
-
 Finally a plot of the data with the regression line:
 ```{r}
 ggplot(diamonds, aes(carat,price)) + geom_point(alpha=0.1) + geom_smooth(method="lm") 
